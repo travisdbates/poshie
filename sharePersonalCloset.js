@@ -23,10 +23,10 @@ module.exports = {
     }
     await driver
       .findElement(By.name("login_form[username_email]"))
-      .sendKeys("bunchofbates");
+      .sendKeys(process.env.POSH_USERNAME);
     await driver
       .findElement(By.name("login_form[password]"))
-      .sendKeys("Po34BashaBears", Key.ENTER);
+      .sendKeys(process.env.POSH_PASSWORD, Key.ENTER);
     await sleep(2500);
     try {
       let error = await driver.findElement(By.css("span.base_error_message"));
