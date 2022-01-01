@@ -1,5 +1,6 @@
 const { Builder, By, Key, until } = require("selenium-webdriver");
 const { sleep } = require("./sleep");
+require('dotenv').config()
 const { captchaCheck } = require("./captchaCheck");
 const ora = require("ora");
 const logUpdate = require("log-update");
@@ -124,7 +125,7 @@ module.exports = {
         await sleep(500);
       } catch (err) {
         console.log("Error in first click", err);
-        driver.quit();
+        // driver.quit();
       }
       try {
         let sharePath = "//i[@class='icon pm-logo-white']";
@@ -136,10 +137,10 @@ module.exports = {
         await sleep(500);
       } catch (err) {
         console.log("Error in second click", err);
-        driver.quit();
+        // driver.quit();
       }
     }
     console.timeEnd("Closet Time Taken:");
-    // driver.quit();
+    driver.quit();
   },
 };

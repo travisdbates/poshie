@@ -38,10 +38,10 @@ let questionsCloset = [
     name: "sort",
     message: "In what order do you want your closet sorted?",
     choices: [
+      "Recently Added",
       "Price Desc ($$$ -> $)",
       "Price Asc ($ -> $$$)",
       "Recently Shared",
-      "Recently Added",
       "Recently Price Dropped",
     ],
     filter: function (val) {
